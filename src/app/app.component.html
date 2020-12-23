@@ -27,11 +27,13 @@
   <input type="text" #carid_input>
   <button type="button" (click)="getCar(carid_input.value)">find</button>
   <button type="submit">edit</button>
-  <input type="text" [(ngModel)]="car.carid" name="carid" placeholder="carid"><br>
-  <input type="text" [(ngModel)]="car.make" name="make" placeholder="make"><br>
-  <input type="text" [(ngModel)]="car.model" name="model" placeholder="model"><br>
-  <input type="text" [(ngModel)]="car.colour" name="colour" placeholder="colour"><br>
-  <input type="text" [(ngModel)]="car.owner" name="owner" placeholder="owner">
+  <div *ngIf="car">
+    <input type="text" [(ngModel)]="car.carid" name="carid" placeholder="carid"><br>
+    <input type="text" [(ngModel)]="car.make" name="make" placeholder="make"><br>
+    <input type="text" [(ngModel)]="car.model" name="model" placeholder="model"><br>
+    <input type="text" [(ngModel)]="car.colour" name="colour" placeholder="colour"><br>
+    <input type="text" [(ngModel)]="car.owner" name="owner" placeholder="owner">
+  </div>
 </form>
 
 <div class="sep"></div>
