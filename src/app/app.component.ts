@@ -19,7 +19,7 @@ export class AppComponent {
   async getAllCars() {
     try {
       const carsResponse = await this.carService.gets().toPromise();
-      this.cars = this.carService.getResponseValue(carsResponse);
+      this.cars = this.carService.getResponseValues(carsResponse);
 
     } catch(err) {
       alert(JSON.stringify(err));
@@ -30,6 +30,7 @@ export class AppComponent {
     try {
       const carResponse = await this.carService.get(carid).toPromise();
       this.car = this.carService.getResponseValue(carResponse);
+      this.car.carid = carid;
 
     } catch(err) {
       alert(JSON.stringify(err));

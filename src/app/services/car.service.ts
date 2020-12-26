@@ -31,6 +31,19 @@ export class CarService {
     return JSON.parse(res.response);
   }
 
+  getResponseValues(res: GetResponse) {
+    const list: any[] = JSON.parse(res.response);
+    const cars: Car[] = [];
+    list.map(car => cars.push({
+      carid: car.Key,
+      colour: car.Record.colour,
+      make: car.Record.make,
+      model: car.Record.model,
+      owner: car.Record.owner
+    }));
+    return cars;
+  }
+
 }
 
 interface GetResponse {

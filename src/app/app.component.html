@@ -24,15 +24,15 @@
 
 <b>find and edit car</b><br>
 <form (keydown.enter)="$event.preventDefault()" (submit)="onEditSubmit()">
-  <input type="text" #carid_input>
+  <input type="text" placeholder="carid" #carid_input>
   <button type="button" (click)="getCar(carid_input.value)">find</button>
   <button type="submit">edit</button>
   <div *ngIf="car">
-    <input type="text" [(ngModel)]="car.carid" name="carid" placeholder="carid"><br>
-    <input type="text" [(ngModel)]="car.make" name="make" placeholder="make"><br>
-    <input type="text" [(ngModel)]="car.model" name="model" placeholder="model"><br>
-    <input type="text" [(ngModel)]="car.colour" name="colour" placeholder="colour"><br>
-    <input type="text" [(ngModel)]="car.owner" name="owner" placeholder="owner">
+    carid: <input type="text" [(ngModel)]="car.carid" name="carid"><br>
+    make: <input type="text" [(ngModel)]="car.make" name="make"><br>
+    model: <input type="text" [(ngModel)]="car.model" name="model"><br>
+    color: <input type="text" [(ngModel)]="car.colour" name="colour"><br>
+    owner: <input type="text" [(ngModel)]="car.owner" name="owner">
   </div>
 </form>
 
